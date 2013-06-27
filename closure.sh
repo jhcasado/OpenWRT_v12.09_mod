@@ -1,5 +1,5 @@
 #! /bin/bash
-directory=$HOME/openwrt/TL-WR1043ND/attitude_adjustment/build_dir/target-mips_r2_uClibc-0.9.33.2/luci-0.11.1/*
+directory=$HOME/openwrt/TL-WR1043ND/attitude_adjustment/build_dir/target-mips_r2_uClibc-0.9.33.2/luci-0.11+svn9858/*
 for file in $( find $directory -name '*.js' )
 do
   echo $file
