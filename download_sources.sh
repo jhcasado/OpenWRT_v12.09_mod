@@ -6,10 +6,11 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [ ! -f $file ]; then
+if [ ! -f .config ]; then
 	echo CONFIG_TARGET_ar71xx=y > .config
+	echo CONFIG_TARGET_ar71xx_generic_TLWR1043=y >> .config
+	make defconfig
 fi
 
-make defconfig
 ln -sfvT $1 dl
 make download
