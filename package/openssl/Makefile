@@ -20,7 +20,7 @@ PKG_MD5SUM:=66bf6f10f060d561929de96f9dfe5b8c
 PKG_LICENSE:=SSLEAY OPENSSL
 PKG_LICENSE_FILES:=LICENSE
 PKG_BUILD_DEPENDS:=ocf-crypto-headers
-PKG_CONFIG_DEPENDS:=CONFIG_OPENSSL_ENGINE_CRYPTO CONFIG_OPENSSL_ENGINE_DIGEST CONFIG_OPENSSL_THREADS
+PKG_CONFIG_DEPENDS:=CONFIG_OPENSSL_ENGINE_CRYPTO CONFIG_OPENSSL_ENGINE_DIGEST
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -75,13 +75,7 @@ endef
 
 OPENSSL_NO_CIPHERS:= no-idea no-md2 no-mdc2 no-rc5 no-sha0 no-smime \
 	no-rmd160 no-aes192 no-ripemd no-camellia no-ans1 no-krb5
-OPENSSL_OPTIONS:= shared no-ec no-err no-hw zlib-dynamic no-sse2
-
-ifdef CONFIG_OPENSSL_THREADS
-  OPENSSL_OPTIONS += threads
-else
-  OPENSSL_OPTIONS += no-threads
-endif
+OPENSSL_OPTIONS:= shared no-ec no-err no-hw no-threads zlib-dynamic no-sse2
 
 ifdef CONFIG_OPENSSL_ENGINE_CRYPTO
   OPENSSL_OPTIONS += -DHAVE_CRYPTODEV
