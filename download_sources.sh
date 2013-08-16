@@ -2,7 +2,7 @@
 
 
 if [ $# -eq 0 ]; then
-    echo "No path provided"
+    echo "No download path provided"
     exit 1
 fi
 
@@ -13,6 +13,7 @@ if [ ! -f .config ]; then
 fi
 
 ln -sfvT $1 dl
+cp config.min .config
 scripts/feeds update -a
 scripts/feeds install -a
 make download
