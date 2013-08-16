@@ -13,7 +13,7 @@ if [ ! -f .config ]; then
 fi
 
 ln -sfvT $1 dl
-cp config.min .config
 scripts/feeds update -a
 scripts/feeds install -a
+cp config.min .config
 make download
