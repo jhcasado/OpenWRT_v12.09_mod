@@ -4,7 +4,13 @@ menu "Configuration"
 config OPENSSL_ENGINE_CRYPTO
 	bool
 	prompt "Crypto acceleration support"
-
+	
+config OPENSSL_THREADS
+	bool
+	prompt "Threading support"
+	default n
+	select PACKAGE_libpthread
+	
 config OPENSSL_ENGINE_DIGEST
 	bool
 	depends OPENSSL_ENGINE_CRYPTO

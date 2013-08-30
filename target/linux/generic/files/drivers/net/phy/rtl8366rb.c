@@ -892,8 +892,7 @@ static int rtl8366rb_sw_get_port_pri(struct switch_dev *dev,
         val->value.i = ((data >> shift) & RTL8366RB_PORT_PRIORITY_MASK); 
  
         return 0; 
-} 
-
+}
 
 static int rtl8366rb_sw_set_port_disable(struct switch_dev *dev,
 				    const struct switch_attr *attr,
@@ -1012,7 +1011,6 @@ static int rtl8366rb_sw_get_port_rate_out(struct switch_dev *dev,
 
 	return 0;
 }
-
 
 static int rtl8366rb_sw_set_port_bc_stfilter(struct switch_dev *dev, 
                                              const struct switch_attr *attr, 
@@ -1176,7 +1174,6 @@ static int rtl8366rb_sw_get_port_stfilter_rate(struct switch_dev *dev,
  
         return 0; 
 }
-
 
 static int rtl8366rb_sw_set_qos_enable(struct switch_dev *dev,
 				    const struct switch_attr *attr,
