@@ -30,6 +30,8 @@ endef
 CONFIGURE_ARGS += \
 	--enable-new-mount	\
 	--with-ncurses		\
+	--disable-nls 		\
+	--disable-tls		\
 	--disable-pg-bell	\
 	--without-udev
 
